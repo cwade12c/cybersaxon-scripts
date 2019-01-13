@@ -16,53 +16,53 @@ The general guidelines for launching these scripts are as follows:
 The recommended order for executing the scripts is as follows:
 
 -policies
---aging.sh
---complexity.sh
---lockout.sh
+--aging.sh (sets password aging policies in logins.def)
+--complexity.sh (sets complexity requirements in common-password)
+--lockout.sh (sets lockout policy in common-auth)
 
 -users
 --Edit the users.conf file to add authorized users (sys defaults already included)
---unauthorizedfinder.sh
---rmunauthorized.sh
---chpassword.sh
+--unauthorizedfinder.sh (generates a list of unauthorized users)
+--rmunauthorized.sh (removes unauthorized users given a list)
+--chpassword.sh (changes passwords of N users given a list)
 --Edit the lockusers.conf file to add users to lock (root is added by default)
---userlocker.sh
---zerofinder.sh
+--userlocker.sh (locks N users given a list)
+--zerofinder.sh (finds all users that have a uid of 0)
 --Edit the groups.conf file to add groups to monitor (sudo and admin by default)
---groupfinder.sh
---disableguest.sh
---disableautologin.sh
+--groupfinder.sh (find all users belonging to groups within a list)
+--disableguest.sh (disable the guest account)
+--disableautologin.sh (disable auto login for all users)
 
 -permissions
---showcron.sh
---clearcron.sh
---limitcron.sh
---findsevens.sh
+--showcron.sh (show crontab of all users)
+--clearcron.sh (reset root crontab)
+--limitcron.sh (restrict cron to root)
+--findsevens.sh (find all files that have read,write,execute permissions)
 
 -hardening
---apt.sh 
---update.sh
---rc.sh
---ssh.sh (if SSH is a critical service)
---vsftpd.sh (if vsftpd is a critical service)
---apache2.sh (if apache2 is a critical service)
---mysql.sh (if mysql-servier is a critical service)
---manualinspection.sh
+--apt.sh (clean up apt sources.list for Ubuntu 16.04)
+--update.sh (run updates and upgrades)
+--rc.sh (exit 0 in rc)
+--ssh.sh (if SSH is a critical service) (harden openssh-server)
+--vsftpd.sh (if vsftpd is a critical service) (harden vsftpd)
+--apache2.sh (if apache2 is a critical service) (harden apache2)
+--mysql.sh (if mysql-servier is a critical service) (harden mysql)
+--manualinspection.sh (iterate through key files to harden that was not automated)
 
 -networking
---sysctl.sh
---firewall.sh
---netinspector.sh
---iptables.sh (IF and ONLY IF more advanced firewall rules are needed)
+--sysctl.sh (sysctl hardening)
+--firewall.sh (install ufw, enable it, and add rules)
+--netinspector.sh (inspect network connections)
+--iptables.sh (IF and ONLY IF more advanced firewall rules are needed) (more advanced firewall rules)
 
 -malware (MAKE SURE YOU HAVE DONE YOUR FORENSICS QUESTIONS FIRST)
---media.sh
---rmexe.sh
---apparmor.sh
---malwarepurge.sh
---servicepurge.sh
---chkrootkit.sh
---rkhunter.sh
---clamav.sh
---lynis.sh
---findphp.sh
+--media.sh (remove media files)
+--rmexe.sh (remove exe and msi files)
+--apparmor.sh (install apparmor with profiles)
+--malwarepurge.sh (purge common malware/hacking tools)
+--servicepurge.sh (interactive service purge - read the prompts carefully)
+--chkrootkit.sh (install and run chkrootkit with recommended options)
+--rkhunter.sh (install and run rkhunter with recommended options)
+--clamav.sh (install, update, and run clamav with recommended options)
+--lynis.sh (install and run lynis with recommended options)
+--findphp.sh (find php files - can be useful for finding php shells)
