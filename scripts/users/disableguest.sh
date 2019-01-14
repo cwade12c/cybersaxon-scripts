@@ -15,3 +15,5 @@ echo "allow-guest=false" >> /etc/lightdm/lightdm.conf
 echo "\nSuccessfully disabled the guest account! Please manually verify this setting in: /etc/lightdm/lightdm.conf\n\nExecuting cat /etc/lightdm/lightdm.conf\n"
 
 cat /etc/lightdm/lightdm.conf
+
+echo "\nThis setting will go into effect once the matchine has restarted\n"
