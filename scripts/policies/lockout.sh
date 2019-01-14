@@ -8,8 +8,8 @@ if [ ! -d ~/bak ]; then
 fi
 cp /etc/pam.d/common-auth ~/bak
 
-echo "\nDone making bak file of common-auth => ~/bak/common-auth"
+echo -e "\nDone making bak file of common-auth => ~/bak/common-auth"
 
 sudo sed -i '1 s/^/auth optional pam_tally.so deny=5 unlock_time=900 onerr=fail audit even_deny_root_account silent\n/' /etc/pam.d/common-auth
 
-echo "Done updating lockout policy!\n"
+echo -e "Done updating lockout policy!\n"

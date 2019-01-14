@@ -8,7 +8,7 @@ if [ ! -d ~/bak ]; then
 fi
 cp /etc/sysctl.conf ~/bak
 
-echo "\nDone making bak file of sysctl.conf => ~/bak/sysctl.conf"
+echo -e "\nDone making bak file of sysctl.conf => ~/bak/sysctl.conf"
 
 sysctl -w net.ipv4.tcp_syncookies=1
 echo "Enabled ipv4 tcp syncookies"

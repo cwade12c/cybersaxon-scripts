@@ -9,10 +9,10 @@ if [ ! -d ~/bak ]; then
 fi
 cp /etc/apt/sources.list ~/bak
 
-echo "\nDone making bak file of sources.list => ~/bak/sources.list"
+echo -e "\nDone making bak file of sources.list => ~/bak/sources.list"
 
 cat ./sources.list > /etc/sources.list
 apt update
 
-echo "\nFinished reinitializing apt sources!\n"
+echo -e "\nFinished reinitializing apt sources!\n"
 

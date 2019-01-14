@@ -8,7 +8,7 @@ if [ ! -d ~/bak ]; then
 fi
 cp /etc/ssh/sshd_config ~/bak
 
-echo "\nDone making bak file of sshd_config => ~/bak/sshd_config"
+echo -e "\nDone making bak file of sshd_config => ~/bak/sshd_config"
 
 sed -i '/^PermitRootLogin/ c\PermitRootLogin no' /etc/ssh/sshd_config
 echo "Set PermitRootLogin no"
@@ -24,5 +24,5 @@ echo "Set PasswordAuthentication no"
 
 sed -i '/^X11Forwarding/ c\X11Forwarding no' /etc/ssh/sshd_config
 
-echo "\nRestarting ssh"
+echo -e "\nRestarting ssh"
 service ssh restart

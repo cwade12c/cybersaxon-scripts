@@ -6,4 +6,4 @@
 crontab -r
 rm -f /etc/cron.deny /etc/at.deny
 
-echo "\nReset root cron jobs!\n"
+echo -e "\nReset root cron jobs!\n"

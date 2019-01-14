@@ -27,4 +27,4 @@ ufw deny 7100
 echo "DENY X-Windows"
 ufw deny 6000:6009/tcp
 
-echo "\nThat's it! Read the iptables script and execute it IF you more paranoid rules"
+echo -e "\nThat's it! Read the iptables script and execute it IF you more paranoid rules"

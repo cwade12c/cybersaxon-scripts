@@ -8,4 +8,4 @@ echo "root" > /etc/at.allow
 chown root:root /etc/cron.allow /etc/at.allow
 chmod 644 /etc/cron.allow /etc/at.allow
 
-echo "\nCreated /etc/{cron.allow, at.allow} and updated ownership+permissions!\n"
+echo -e "\nCreated /etc/{cron.allow, at.allow} and updated ownership+permissions!\n"

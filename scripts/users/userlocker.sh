@@ -11,10 +11,10 @@ if [ ! -d ~/bak ]; then
 fi
 cp /etc/passwd ~/bak
 
-echo "\nDone making bak file of passwd => ~/bak/passwd"
+echo -e "\nDone making bak file of passwd => ~/bak/passwd"
 
 while read username; do
 	passwd -l $username
 done < $INPUT_FILE
 
-echo "Done locking accounts!\n"
+echo -e "Done locking accounts!\n"

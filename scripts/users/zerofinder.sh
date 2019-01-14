@@ -8,4 +8,4 @@ OUTPUT_FILE="zero_users.txt"
 
 cut -d: -f1,3 /etc/passwd | egrep ':0$' | cut -d: -f1 | grep -v root > $OUTPUT_FILE
 
-echo "\nSuccessfully saved the zero users to $(pwd)/$OUTPUT_FILE\n"
+echo -e "\nSuccessfully saved the zero users to $(pwd)/$OUTPUT_FILE\n"

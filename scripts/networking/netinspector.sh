@@ -8,7 +8,7 @@ echo "Press (almost) any key to continue..."
 read foo
 lsof -i -n -P
 
-echo "\nExecuting netstat -tulnp"
+echo -e "\nExecuting netstat -tulnp"
 echo "Press (almost) any key to continue..."
 read foo
 netstat -tulnp
