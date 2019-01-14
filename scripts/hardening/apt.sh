@@ -4,7 +4,9 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/apt/sources.list ~/bak
 
 echo "\nDone making bak file of sources.list => ~/bak/sources.list"

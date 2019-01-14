@@ -4,7 +4,9 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/apache2/apache2.conf ~/bak
 
 echo "\nDone making bak file of apache2.conf => ~/bak/apache2.conf"
@@ -20,8 +22,9 @@ echo "Done updating ownership of apache2"
 	if [ -e /etc/apache2/apache2.conf ]; then
 		echo "<Directory />" >> /etc/apache2/apache2.conf
 		echo "        AllowOverride None" >> /etc/apache2/apache2.conf
-		echo "        Order Deny,Allow" >> /etc/apache2/apache2.conf
-		echo "        Deny from all" >> /etc/apache2/apache2.conf
+		echo "        Require all denied" >> /etc/apache2/apache2.conf
+		#echo "        Order Deny,Allow" >> /etc/apache2/apache2.conf
+		#echo "        Deny from all" >> /etc/apache2/apache2.conf
 		echo "</Directory>" >> /etc/apache2/apache2.conf
 		echo "UserDir disabled root" >> /etc/apache2/apache2.conf
 fi

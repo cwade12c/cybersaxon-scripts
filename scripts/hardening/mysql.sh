@@ -4,7 +4,9 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/mysql/my.cnf ~/bak
 
 echo "\nDone making bak file of my.cnf => ~/bak/my.cnf"

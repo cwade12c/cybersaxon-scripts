@@ -4,7 +4,9 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/vsftpd.conf ~/bak
 
 echo "\nDone making bak file of vsftpd.conf => ~/bak/vsftpd.conf"

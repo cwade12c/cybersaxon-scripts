@@ -3,7 +3,9 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/login.defs ~/bak
 
 echo "\nDone making bak file of login.defs => ~/bak/login.defs"

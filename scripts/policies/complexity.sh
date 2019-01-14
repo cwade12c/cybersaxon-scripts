@@ -3,7 +3,9 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/pam.d/common-password ~/bak
 
 echo "\nDone making bak file of common-password => ~/bak/common-password"

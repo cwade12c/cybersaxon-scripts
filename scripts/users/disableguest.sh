@@ -3,7 +3,9 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/lightdm/lightdm.conf ~/bak
 
 echo "\nDone making bak file of lightdm.conf => ~/bak/lightdm.conf"

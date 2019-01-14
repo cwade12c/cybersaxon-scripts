@@ -7,7 +7,9 @@ INPUT_FILE="./users.conf"
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/shadow ~/bak
 
 echo "\nDone making bak file of shadow => ~/bak/shadow"

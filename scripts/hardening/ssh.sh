@@ -3,7 +3,9 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/ssh/sshd_config ~/bak
 
 echo "\nDone making bak file of sshd_config => ~/bak/sshd_config"

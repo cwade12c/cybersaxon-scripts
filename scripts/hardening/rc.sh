@@ -3,7 +3,9 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/rc.local ~/bak
 
 echo "\nDone making bak file of rc.local => ~/bak/rc.local"
