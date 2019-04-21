@@ -4,10 +4,12 @@
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/vsftpd.conf ~/bak
 
-echo "\nDone making bak file of vsftpd.conf => ~/bak/vsftpd.conf"
+echo -e "\nDone making bak file of vsftpd.conf => ~/bak/vsftpd.conf"
 
 sed -i '/^anon_upload_enable/ c\anon_upload_enable no' /etc/vsftpd.conf
 echo "Set anon_upload_enable no"
@@ -18,7 +20,7 @@ echo "Set anonymous_enable NO"
 sed -i '/^chroot_local_user/ c\chroot_local_user=YES' /etc/vsftpd.conf
 echo "Set chroot_local_user YES"
 
-echo "\nDone hardening /etc/vsftpd.conf"
+echo -e "\nDone hardening /etc/vsftpd.conf"
 echo "Executing service vsftpd restart"
 
 service vsftpd restart

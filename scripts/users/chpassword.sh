@@ -7,13 +7,15 @@ INPUT_FILE="./users.conf"
 
 #DO NOT EDIT BELOW HERE
 
-mkdir ~/bak
+if [ ! -d ~/bak ]; then
+	mkdir ~/bak
+fi
 cp /etc/shadow ~/bak
 
-echo "\nDone making bak file of shadow => ~/bak/shadow"
+echo -e "\nDone making bak file of shadow => ~/bak/shadow"
 
 while read username; do
 	echo "$username":$PASSWORD | /usr/sbin/chpasswd;
 done < $INPUT_FILE
 
-echo "Done changing passwords\n"
+echo -e "Done changing passwords\n"

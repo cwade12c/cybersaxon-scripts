@@ -9,4 +9,4 @@ INPUT_FILE="./unauthorized_users.txt" #these are unauthorized users
 while read username ; do
 	deluser "$username";
 done < $INPUT_FILE
-echo "\nUnauthorized users were deleted!\n"
+echo -e "\nUnauthorized users were deleted!\n"

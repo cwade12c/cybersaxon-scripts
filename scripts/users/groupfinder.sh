@@ -13,4 +13,4 @@ while read groupname; do
 	cat /etc/group | grep "$groupname" >> $OUTPUT_FILE
 done < $INPUT_FILE
 
-echo "\nFinished searching for users in groups! Results are in $(pwd)/$OUTPUT_FILE\n"
+echo -e "\nFinished searching for users in groups! Results are in $(pwd)/$OUTPUT_FILE\n"

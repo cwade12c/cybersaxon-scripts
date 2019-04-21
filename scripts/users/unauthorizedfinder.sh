@@ -9,4 +9,4 @@ OUTPUT_FILE="unauthorized_users.txt"
 
 cut -d: -f1 /etc/passwd | grep -vFf $INPUT_FILE > $OUTPUT_FILE
 
-echo "\nList of unauthorized users was saved to $(pwd)/$OUTPUT_FILE\n"
+echo -e "\nList of unauthorized users was saved to $(pwd)/$OUTPUT_FILE\n"
